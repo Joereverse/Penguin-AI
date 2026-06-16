@@ -1,191 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penguin AI</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .container {
-            text-align: center;
-            background: white;
-            padding: 60px 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 100%;
-        }
-        
-        h1 {
-            color: #667eea;
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        
-        .penguin-emoji {
-            font-size: 4em;
-            margin-bottom: 20px;
-        }
-        
-        p {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        
-        .button {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            font-weight: bold;
-        }
-        
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penguin AI — The Future of AI-Powered Crypto</title>
 
-        /* Стили для прогресса */
-        .progress-section {
-            margin-top: 50px;
-            padding-top: 40px;
-            border-top: 2px solid #eee;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
 
-        .progress-title {
-            font-size: 1.8em;
-            color: #667eea;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background: #0b0f1a;
+  color: white;
+}
 
-        .progress-container {
-            background: #f0f0f0;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-        }
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+}
 
-        .progress-bar-wrapper {
-            width: 100%;
-            height: 40px;
-            background: #e0e0e0;
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+/* LOGO + AVATAR */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            width: 10%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 10px;
-            color: white;
-            font-weight: bold;
-            font-size: 0.9em;
-            transition: width 0.5s ease;
-        }
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4fd1c5;
+}
 
-        .progress-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.1em;
-            color: #333;
-        }
+.logo h1 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
 
-        .progress-amount {
-            font-weight: bold;
-            color: #667eea;
-            font-size: 1.4em;
-        }
+/* NAV */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  opacity: 0.8;
+}
 
-        .progress-goal {
-            color: #999;
-            font-size: 1em;
-        }
+nav a:hover {
+  opacity: 1;
+}
 
-        .percentage {
-            color: #764ba2;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-    </style>
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  opacity: 0.7;
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="penguin-emoji">🐧</div>
-        <h1>Penguin AI</h1>
-        <p>Welcome to Penguin AI - Intelligent solutions for the modern world</p>
-        <a href="#" class="button">Get Started</a>
-        <a href="#" class="button">Learn More</a>
 
-        <!-- Секция прогресса сбора средств -->
-        <div class="progress-section">
-            <div class="progress-title">💰 Сбор средств</div>
-            
-            <div class="progress-container">
-                <div class="progress-bar-wrapper">
-                    <div class="progress-bar">10%</div>
-                </div>
-                
-                <div class="progress-info">
-                    <div>
-                        <div class="progress-amount" id="current-amount">$10,000.00</div>
-                        <div class="progress-goal">собрано из $100,000.00</div>
-                    </div>
-                    <div class="percentage" id="percentage">10%</div>
-                </div>
-            </div>
-        </div>
-    </div>
+<header>
+  <div class="logo">
+    <!-- Penguin Avatar -->
+    <img src="https://i.imgur.com/8Km9tLL.png" alt="Penguin AI Avatar">
+    <h1>Penguin AI</h1>
+  </div>
 
-    <script>
-        // Параметры прогресса
-        const targetAmount = 100000.00;
-        const currentPercentage = 10; // 0-10%
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Token</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 
-        // Обновление прогресс-бара
-        function updateProgress(percentage) {
-            const progressBar = document.querySelector('.progress-bar');
-            const currentAmount = (targetAmount * percentage) / 100;
-            const percentageDisplay = document.getElementById('percentage');
-            const amountDisplay = document.getElementById('current-amount');
+<section class="hero">
+  <h2>The Future of AI-Powered Crypto</h2>
+  <p>Build. Learn. Trade. With Penguin AI.</p>
 
-            progressBar.style.width = percentage + '%';
-            progressBar.textContent = percentage + '%';
-            percentageDisplay.textContent = percentage + '%';
-            amountDisplay.textContent = '$' + currentAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-        }
+  <!-- Penguin image in hero -->
+  <img src="https://i.imgur.com/8Km9tLL.png" style="width:120px;margin-top:25px;">
+</section>
 
-        // Инициализация
-        updateProgress(currentPercentage);
-    </script>
 </body>
 </html>
